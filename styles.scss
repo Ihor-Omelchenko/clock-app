@@ -1,0 +1,36 @@
+@use './styles/typography' as *;
+@use './styles/color' as *;
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  height: 100vh;
+  background-color: var(--black-color);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .time-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 16px;
+    color: var(--white-color);
+
+    .greeting-container {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+  }
+}

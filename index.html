@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="wrapper" id="wrapper">
+        <div class="queto-container"></div>
+        <div class="time-container">
+            <div class="greeting-container">
+                <span>
+                    <img id="greeting-icon" src="./assets/desktop/icon-sun.svg" alt="Icon sun">
+                </span>
 
+                <span class="text-preset-5">GOOD MORNING</span>
+            </div>
+
+            <div class="time-display-container">
+                <span id="time" class="time text-preset-1"></span>
+                
+                <span id="zone-code" class="zone-code text-preset-3">BST</span>
+            </div>
+
+
+            <div class="location-container">
+                <span id="location" class="text-preset-4"></span>
+            </div>
+        </div>
+    </div>
 
     <script type="module" src="script.js"></script>
 </body>

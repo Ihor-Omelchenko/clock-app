@@ -1,6 +1,9 @@
 import { fetchLocationData } from './js/api/ipbase.js';
 import { formatCurrentTime } from './js/services/time.service.js';
-import { getGreeting } from './js/utils/greeting.js';
+import { startLiveClock } from './js/services/clock.service.js'
+
+import './styles.scss';
+
 
 window.addEventListener('DOMContentLoaded', async () => {
   const data = await fetchLocationData();
@@ -10,6 +13,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   const timezone = data.timezone?.id || 'Unknown';
   const zoneCode = data.timezone?.code || 'UTC';
   const currentTimeISO = data.timezone?.current_time || null;
+  const alpha = data.location?.country?.alpha2 || 'Unknown'
 
   if (!currentTimeISO) {
     console.log('No time to respond');
@@ -17,24 +21,24 @@ window.addEventListener('DOMContentLoaded', async () => {
   }
 
   const {
-    time,
     formattedDate,
-    hours,
     dayOfWeek,
     dayOfYear,
     weekNumber,
   } = formatCurrentTime(currentTimeISO);
 
-  const greeting = getGreeting(hours);
-
-  console.log('City:', city);
   console.log('Country:', country);
   console.log('Timezone:', timezone);
-  console.log('Code:', zoneCode);
-  console.log('Time:', time);
   console.log('Date:', formattedDate);
-  console.log('Greeting:', greeting);
   console.log('Day of the week:', dayOfWeek);
   console.log('Day of the year:', dayOfYear);
   console.log('Week number:', weekNumber);
+
+  document.getElementById('time').textContent = time;
+  document.getElementById('zone-code').textContent = zoneCode;
+  document.getElementById('location').textContent = `IN ${city}, ${alpha}`
+
+  startLiveClock(currentTimeISO);
 });
+
+
