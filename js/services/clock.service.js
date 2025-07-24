@@ -21,8 +21,8 @@ export function startLiveClock(currentTimeISO) {
     const isDay = hours >= 6 && hours < 18;
 
     const imageUrl = isDay
-        ? `./assets/${screen}/bg-image-daytime.jpg`
-        : `./assets/${screen}/bg-image-nighttime.jpg`;
+        ? `/assets/${screen}/bg-image-daytime.jpg`
+        : `/assets/${screen}/bg-image-nighttime.jpg`;
 
     if (wrapper) {
         wrapper.style.backgroundImage = `url('${imageUrl}')`;
@@ -39,8 +39,8 @@ export function startLiveClock(currentTimeISO) {
 
     if (icon) {
       icon.src = hours >= 6 && hours < 18
-        ? './assets/desktop/icon-sun.svg'
-        : './assets/desktop/icon-moon.svg';
+        ? '/assets/desktop/icon-sun.svg'
+        : '/assets/desktop/icon-moon.svg';
       icon.alt = hours >= 6 && hours < 18 ? 'Sun icon' : 'Moon icon';
     }
   }

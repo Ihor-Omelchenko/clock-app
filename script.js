@@ -34,7 +34,6 @@ window.addEventListener('DOMContentLoaded', async () => {
   console.log('Day of the year:', dayOfYear);
   console.log('Week number:', weekNumber);
 
-  document.getElementById('time').textContent = time;
   document.getElementById('zone-code').textContent = zoneCode;
   document.getElementById('location').textContent = `IN ${city}, ${alpha}`
 
